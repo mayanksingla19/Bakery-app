@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="row">
+            <div class="col-2">
+                <img src="/images/logo.png">
+            </div>
+            <div class="col-10">
+                <h1>Bakery Application</h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/categories">Categories</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/purchase">Purchase</a></li>
+                        <li><a class="active" href="/purchase/history">Order History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>All Order History</h1>   
+                <table class="table">
+                    <tr>
+                        <th> Customer Name </th>
+                        <th> Contact No </th>
+                        <th> Address </th>
+                        <th> Product Name </th>
+                        <th> Price </th>
+                        <th> Qty </th>
+                        <th> Order Total </th>
+                    </tr>
+                    <% for( var i = 0; i < customers.length; i++ ){ %> 
+                        <tr>
+                            <td><%= customers[i].customername %></td>
+                            <td><%= customers[i].contactno %></td>
+                            <td><%= customers[i].address %></td>
+                            <td><%= customers[i].orders.product.productname %></td>
+                            <td>$ <%= customers[i].orders.product.price %></td>
+                            <td><%= customers[i].orders.qty %></td>
+                            <td>$ <%= customers[i].orders.ordertotal %></td>
+                        </tr>
+                    <% } %>
+                </table>  
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright By Bakery Application since 1990.</p>
+    </div>
+
+</body>
+
+</html>

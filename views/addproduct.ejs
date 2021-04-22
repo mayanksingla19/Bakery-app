@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="row">
+            <div class="col-2">
+                <img src="/images/logo.png">
+            </div>
+            <div class="col-10">
+                <h1>Bakery Application</h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/categories">Categories</a></li>
+                        <li><a class="active" href="/products">Products</a></li>
+                        <li><a href="/purchase">Purchase</a></li>
+                        <li><a href="/purchase/history">Order History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <h1>Add New Product</h1>
+                <form method="post" action="/products/create">
+                    <table class="formtable">
+                        <tr>
+                            <td><label for="productid">Enter Product ID</label></td>
+                            <td>
+                                <input type="number" name="productid" id="productid" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="id">Choose Category:</label></td>
+                            <td>
+                                <select name="category" id="id">
+                                    <% for(var i=0; i < categories.length; i++){ %>
+                                        <option value="<%= categories[i]._id %>">
+                                            <%= categories[i].categoryname %>
+                                        </option>
+
+                                        <% } %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="productname">Enter Product Name</label></td>
+                            <td>
+                                <input type="text" name="productname" id="productname" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="price">Enter Product Price</label></td>
+                            <td>
+                                <input type="number" name="price" step="any" id="price" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="description">Enter Product Description</label></td>
+                            <td>
+                                <textarea name="description" id="description" required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="imagepath">Enter Product Image</label></td>
+                            <td>
+                                <input type="text" name="imagepath" id="imagepath" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <button class="btn btn-add" type="submit">Save Product Details</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright By Bakery Application since 1990.</p>
+    </div>
+
+</body>
+
+</html>

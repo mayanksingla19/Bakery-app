@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+body{
+    background-color: #f2f2f2;
+}
+
+.container{
+    width:80%;
+    margin:0 auto;
+}
+
+.header {
+    padding: 15px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: #333;
+}
+
+.menu li {
+    float:left;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+.menu li a {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover:not(.active){
+    background-color: #111;
+}
+
+.active{
+    background-color: #4CAF50;
+}
+
+
+.footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+
+.table, .table td, .table th {
+    border:1px solid black;
+    padding:10px;
+}
+.table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.formtable, .formtable td, .formtable th{
+    padding:10px;
+}
+
+.btn{
+    border:none;
+    color:white;
+    padding:15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:16px;
+    margin:4px 2px;
+    cursor: pointer;
+}
+
+.btn-add{
+    background-color: #008CBA;
+}
+.btn-edit{
+    background-color: #555555;
+}
+.btn-delete{
+    background-color: #F44336;
+}
+.show{
+    display:block;
+}
+.hide{
+    display: none;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  .card-button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  
+  .card-button:hover {
+    opacity: 0.7;
+  }
+
+
+/* For desktop: */
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}

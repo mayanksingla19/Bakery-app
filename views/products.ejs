@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script src="/js/categories.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="row">
+            <div class="col-2">
+                <img src="/images/logo.png">
+            </div>
+            <div class="col-10">
+                <h1>Bakery Application</h1>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/categories">Categories</a></li>
+                        <li><a class="active" href="/products">Products</a></li>
+                        <li><a href="/purchase">Purchase</a></li>
+                        <li><a href="/purchase/history">Order History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <a class="btn btn-add" href="/products/addform">Add New Product</a> <br>
+            </div>
+            <div class="col-10">
+                <h1>All Products</h1>
+                <table class="table">
+                    <tr>
+                        <th>Photo</th>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Operations</th>
+                    </tr>
+                    <% if(products.length==0){ %>
+                        <tr>
+                            <td colspan="6" align="center">There is No Product Saved</td>
+                        </tr>
+                        <% }else{ for(var i=0; i < products.length; i++){ %>
+                            <tr>
+                                <td><img src="/images/products/<%= products[i].imagepath%>"></td>
+                                <td>
+                                    <%= products[i].productid %>
+                                </td>
+                                <td>
+                                    <%= products[i].productname %>
+                                </td>
+                                <td>
+                                    <%= products[i].price %>
+                                </td>
+                                <td>
+                                    <%= products[i].description %>
+                                </td>
+                                <td>
+                                    <form method="post" action="/products/delete" onsubmit="return confirm('Are You Sure to remove This Record?')">
+                                        <input type="hidden" name="productid" value="<%= products[i]._id%>">
+
+                                        <button class="btn btn-delete" type="submit">Delete Product</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <% } } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright By Bakery Application since 1990.</p>
+    </div>
+
+</body>
+
+</html>
