@@ -15,7 +15,7 @@ require('./models/categorymodel');
 require('./models/productmodel');
 require('./models/ordermodel');
 require('./models/customermodel');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/bakery', { useUnifiedTopology: true, useNewUrlParser: true },function(){
+mongoose.connect( 'mongodb+srv://mayank:bakery@cluster0.ofbdy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true },function(){
     console.log('Connected to the database');
 });
 
