@@ -8,14 +8,13 @@ var app = express();
 app.use(express.static('public'))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+
 
 require('./models/categorymodel');
 require('./models/productmodel');
 require('./models/ordermodel');
 require('./models/customermodel');
-mongoose.connect( 'mongodb+srv://mayank:bakery@cluster0.ofbdy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ', { useUnifiedTopology: true, useNewUrlParser: true },function(){
+mongoose.connect((process.env.MONGODB_URI || 'mongodb+srv://mayank:bakery@cluster0.ofbdy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ', { useUnifiedTopology: true, useNewUrlParser: true },function(){
     console.log('Connected to the database');
 });
 
