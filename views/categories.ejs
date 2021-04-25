@@ -103,26 +103,7 @@
                         <th>Category Name</th>
                         <th colspan="2">Operations</th>
                     </tr>
-                    <% if(categories.length==0){ %>
-                        <tr>
-                            <td colspan="2" align="center">There is No Category Saved Yet</td>
-                        </tr>
-                        <% }else{ for(var i=0; i < categories.length; i++){ %>
-                            <tr>
-                                <td>
-                                    <%= categories[i].categoryid %>
-                                </td>
-                                <td>
-                                    <%= categories[i].categoryname %>
-                                </td>
-                                <td><button class="btn btn-edit"
-                                        onclick="displayEdit('<%= categories[i].categoryid %>','<%= categories[i].categoryname %>')"
-                                        type="button">Edit Details</button></td>
-                                <td><button class="btn btn-delete" 
-                                    onclick="displayDelete('<%= categories[i].categoryid %>','<%= categories[i].categoryname %>')"
-                                    type="button">Delete Details</button></td>
-                            </tr>
-                            <% } } %>
+                 
                 </table>
             </div>
         </div>
